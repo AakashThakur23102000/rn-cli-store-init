@@ -3,7 +3,7 @@
 Copy the Redux + Persist + Theme setup into any RN project:
 
 ```
-npx degit AakashThakur23102000/rn-cli-store-init/template . --force && npm i @reduxjs/toolkit react-redux redux-persist @react-native-async-storage/async-storage react-native-paper react-native-safe-area-context react-native-size-matters && npm i -D @types/react-redux
+npx degit AakashThakur23102000/rn-cli-store-init/template . --force && npm i @reduxjs/toolkit react-redux redux-persist @react-native-async-storage/async-storage react-native-paper react-native-safe-area-context react-native-size-matters react-native-svg && npm i -D @types/react-redux react-native-svg-transformer
 ```
 Then wrap your entry (index.tsx/index.js) with Provider + PersistGate.
 
@@ -19,7 +19,7 @@ import { PaperProvider } from 'react-native-paper';
             <PersistGate persistor={persistor}>
                     <PaperProvider>
                         <App />
-                    <PaperProvider>
+                    </PaperProvider>
             </PersistGate>
    </Provider>
 ```
