@@ -8,10 +8,14 @@ npx degit AakashThakur23102000/rn-cli-store-init/template . \
 
 Then wrap your entry (index.tsx/index.js) with Provider + PersistGate.
 
+
+```
 import { store, persistor } from './src/store/store';
 import { PersistGate } from 'redux-persist/integration/react';
+
 <Provider store={store}>
     <PersistGate persistor={persistor}>
         <App />
     </PaperProvider>
 </PersistGate>
+```
