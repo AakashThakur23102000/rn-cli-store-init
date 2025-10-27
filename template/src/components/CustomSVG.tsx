@@ -1,8 +1,8 @@
 import React from 'react';
 import type { SvgProps } from 'react-native-svg';
-import Login from '../assets/svg/LoginDoor.svg'
+// import Login from '../assets/svg/LoginDoor.svg'
 const ICONS = {
-    login: Login,
+    // login: Login,
 } as const;
 
 type IconName = keyof typeof ICONS;
