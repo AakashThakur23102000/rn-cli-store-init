@@ -3,7 +3,7 @@
 Copy the Redux + Persist + Theme + Reusable Components setup into any new RN project:
 
 ```
-npx degit AakashThakur23102000/rn-cli-starter-template/template . --force && npm i @reduxjs/toolkit react-redux redux-persist @react-native-async-storage/async-storage react-native-paper react-native-safe-area-context react-native-size-matters react-native-svg && npm i -D @types/react-redux react-native-svg-transformer reactotron-react-native && adb reverse tcp:9090 tcp:9090
+npx degit AakashThakur23102000/rn-cli-starter-template/template . --force && npm i @reduxjs/toolkit react-redux redux-persist @react-native-async-storage/async-storage react-native-paper react-native-safe-area-context react-native-size-matters react-native-svg @tanstack/react-query && npm i -D @types/react-redux react-native-svg-transformer reactotron-react-native && adb reverse tcp:9090 tcp:9090
 ```
 
 **What this does**
@@ -23,6 +23,7 @@ npx degit AakashThakur23102000/rn-cli-starter-template/template . --force && npm
 - **react-native-safe-area-context** – Handles notches/status bars; provides insets & `SafeAreaView`.
 - **react-native-size-matters** – Scaled sizes (`ScaledSheet`, `ms`, `vs`) for responsive layouts.
 - **react-native-svg** – SVG rendering support.
+- **@tanstack/react-query** -  For Api handling.
 
 ### Dev
 - **@types/react-redux** – TypeScript types for `react-redux`.
@@ -76,3 +77,22 @@ const config = {
 module.exports = mergeConfig(defaultConfig, config);
 ```
 Refer - https://github.com/kristerkari/react-native-svg-transformer
+
+### Step 3 - For Api handling Tanstack Query is also added but we need to add provider 
+- Provide the client to your App
+```
+  import { QueryClientProvider } from '@tanstack/react-query';
+  import GlobalQueryClient from '../utils/globalQueryClient';
+  const queryClient = GlobalQueryClient(navigation);
+  return(
+          <QueryClientProvider client={queryClient}>
+            <App/>
+          </QueryClientProvider>
+  )
+```
+#### 🧠 Notes
+- `useNavigation()` only works **after** the `NavigationContainer` is mounted.  
+  Hence, the `QueryClientProvider` is wrapped **inside** a child component.
+
+Refer - https://tanstack.com/query/latest/docs/framework/react/quick-start
+
