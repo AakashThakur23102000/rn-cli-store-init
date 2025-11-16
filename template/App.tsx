@@ -32,7 +32,7 @@ const App = () => {
     <>
       <StatusBar
         backgroundColor={COLORS.statusBarAndSafeAreaView}
-        barStyle={themeMode === "dark" ? "dark-content" : "light-content"}
+        barStyle={themeMode === "dark" ? "light-content" : "dark-content"}
       />
       <SafeAreaView style={styles.statusBarAndSafeAreaView}>
         <CustomText>App</CustomText>
