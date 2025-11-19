@@ -1,0 +1,22 @@
+{
+  "runtimeDependencies": [
+    "@reduxjs/toolkit",
+    "react-redux",
+    "redux-persist",
+    "@react-native-async-storage/async-storage",
+    "react-native-paper",
+    "react-native-safe-area-context",
+    "react-native-size-matters",
+    "react-native-svg",
+    "@tanstack/react-query"
+  ],
+  "devDependencies": [
+    "@types/react-redux",
+    "react-native-svg-transformer",
+    "reactotron-react-native"
+  ],
+  "postInstall": [
+    "echo '✅ Dexter template post-install complete'",
+    "adb reverse tcp:9090 tcp:9090"
+  ]
+}
